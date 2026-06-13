@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Base in Okinawa Onnason | 一棟まるごと、家族だけの時間を。</title>
+  <meta name="description" content="恩納村名嘉真の一棟貸しヴィラ、Base in Okinawa Onnason。3LDKを家族だけで使える、のびのびできる沖縄滞在のための宿。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&family=Shippori+Mincho+B1:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --base: #FAFAF5;
+      --green: #2E7D5E;
+      --green-light: rgba(46, 125, 94, 0.10);
+      --ink: #1C1C1C;
+      --sub: #6B6B5E;
+      --line: #EDE9E0;
+      --navy: #07162C;
+      --paper: #FFFFFF;
+      --section-bg: #F3F2EA;
+      --font-serif: "Shippori Mincho B1", serif;
+      --font-sans: "Noto Sans JP", sans-serif;
+      --font-en: "DM Sans", "Noto Sans JP", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background: var(--base);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.8;
+      word-break: keep-all;
+      line-break: strict;
+      overflow-wrap: break-word;
+    }
+
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p, blockquote { margin: 0; }
+
+    h1, h2 {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      overflow-wrap: normal;
+    }
+
+    h3 {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      overflow-wrap: normal;
+    }
+
+    /* ── DEMO BANNER ── */
+    .demo-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy);
+      color: #fff;
+      font-family: var(--font-en);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── LP WRAPPER (mobile) ── */
+    .lp-wrapper {
+      padding-top: 36px;
+    }
+
+    /* ── EYEBROW ── */
+    .eyebrow {
+      margin-bottom: 10px;
+      color: var(--green);
+      font-family: var(--font-en);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      padding: 64px 24px;
+    }
+
+    .section-title {
+      margin-bottom: 22px;
+      font-size: 24px;
+      line-height: 1.55;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: calc(100svh - 36px);
+      display: flex;
+      align-items: flex-end;
+      padding: 0 24px 48px;
+      color: #fff;
+      background-image:
+        linear-gradient(to top, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0.08) 100%),
+        url("photos/family-beach-joy.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .hero-label {
+      margin-bottom: 14px;
+      font-family: var(--font-en);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      opacity: 0.85;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      line-height: 1.35;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.22);
+    }
+
+    .hero-copy {
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.9;
+      opacity: 0.9;
+    }
+
+    /* ── BUTTON ── */
+    .button {
+      min-height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid var(--green);
+      border-radius: 4px;
+      background: var(--green);
+      color: #fff;
+      font-family: var(--font-en);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--green);
+    }
+
+    .hero .button {
+      margin-top: 28px;
+      width: 100%;
+      border-color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      color: #fff;
+    }
+
+    /* ── INTRO ── */
+    .rating-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .rating {
+      padding: 12px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.6);
+    }
+
+    .rating-source {
+      display: block;
+      color: var(--sub);
+      font-family: var(--font-en);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .rating-score {
+      display: block;
+      margin-top: 4px;
+      color: var(--green);
+      font-family: var(--font-en);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .lead {
+      display: grid;
+      gap: 16px;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .lead .quiet {
+      color: var(--sub);
+      font-style: italic;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature-card {
+      padding: 22px 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.6);
+    }
+
+    .feature-number {
+      display: inline-flex;
+      width: 32px; height: 32px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      background: var(--green-light);
+      color: var(--green);
+      font-family: var(--font-en);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .feature-card p {
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    /* ── GALLERY ── */
+    .gallery {
+      background: var(--line);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .photo-slot {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--line);
+    }
+
+    .photo-slot.wide {
+      grid-column: span 2;
+      aspect-ratio: 2 / 1.1;
+    }
+
+    .photo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-label {
+      position: absolute;
+      left: 10px; bottom: 10px;
+      color: #fff;
+      font-family: var(--font-en);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+      text-transform: uppercase;
+    }
+
+    /* ── REVIEWS ── */
+    .reviews {
+      background: #fff;
+    }
+
+    .review-list {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 24px;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .review-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review-card {
+      scroll-snap-align: start;
+      flex: 0 0 84%;
+      min-width: 0;
+      padding: 20px 18px;
+      border: 1px solid var(--line);
+      background: var(--base);
+      overflow: hidden;
+    }
+
+    .stars {
+      margin-bottom: 12px;
+      color: var(--green);
+      font-family: var(--font-en);
+      font-size: 14px;
+      letter-spacing: 0.06em;
+    }
+
+    blockquote {
+      margin: 0;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    cite {
+      display: block;
+      margin-top: 12px;
+      color: var(--sub);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-style: normal;
+    }
+
+    /* ── AMENITIES ── */
+    .amenity-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .amenity-card {
+      display: block;
+      grid-template-columns: none;
+      gap: 14px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--green);
+      background: rgba(255,255,255,0.6);
+    }
+
+    .amenity-icon {
+      display: flex;
+      width: 40px; height: 40px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 17px;
+    }
+
+    .amenity-card h3 {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .amenity-card p {
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    /* ── WHO ── */
+    .who { background: var(--section-bg); }
+
+    .scene-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .scene-card {
+      padding: 20px 20px 20px 18px;
+      border-left: 3px solid var(--green);
+      background: rgba(255,255,255,0.75);
+    }
+
+    .scene-type {
+      margin-bottom: 6px;
+      color: var(--green);
+      font-family: var(--font-en);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .scene-card p {
+      font-size: 14px;
+      line-height: 1.95;
+      color: var(--ink);
+    }
+
+    /* ── ACCESS ── */
+    .access-text {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 24px;
+      color: var(--sub);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .access-text strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 280px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .map-link { display:inline-block; margin-top:10px; color:var(--green); font-family:var(--font-sans); font-size:13px; text-decoration:none; }
+    .map-link:hover { text-decoration:underline; }
+
+    .map-frame iframe {
+      display: block;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      padding: 80px 24px;
+      color: #fff;
+      background-image:
+        linear-gradient(rgba(8,28,22,0.72), rgba(8,28,22,0.76)),
+        url("photos/gallery-beach-wide.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    .final-cta h2 {
+      margin-bottom: 14px;
+      font-size: 26px;
+      line-height: 1.5;
+    }
+
+    .final-cta p {
+      margin-bottom: 28px;
+      color: rgba(255,255,255,0.8);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .cta-buttons {
+      display: grid;
+      gap: 12px;
+    }
+
+    .final-cta .button {
+      border-color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.14);
+      backdrop-filter: blur(8px);
+      color: #fff;
+    }
+
+    .final-cta .button.primary-cta {
+      background: #fff;
+      border-color: #fff;
+      color: var(--green);
+      backdrop-filter: none;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 28px 24px 32px;
+      border-top: 1px solid var(--line);
+      background: var(--base);
+      color: var(--sub);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-family: var(--font-en);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ── FIXED CTA (mobile) ── */
+    .fixed-cta {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 900;
+      padding: 10px 16px;
+      background: rgba(250,250,245,0.94);
+      border-top: 1px solid var(--line);
+      box-shadow: 0 -8px 24px rgba(0,0,0,0.10);
+      backdrop-filter: blur(12px);
+    }
+
+    .fixed-cta .button {
+      min-height: 50px;
+      font-size: 14px;
+    }
+
+    /* ── DESKTOP LAYOUT ── */
+    @media (min-width: 768px) {
+      .demo-banner { height: 40px; }
+
+      .lp-wrapper { padding-top: 40px; }
+
+      .hero {
+        min-height: 88vh;
+        padding: 0 8% 100px;
+        align-items: flex-end;
+      }
+
+      .hero-inner { max-width: 580px; }
+
+      .hero h1 {
+        font-size: 58px;
+        line-height: 1.25;
+      }
+
+      .hero-copy {
+        font-size: 15px;
+        max-width: 440px;
+      }
+
+      .hero .button {
+        width: auto;
+        min-width: 220px;
+        margin-top: 36px;
+      }
+
+      /* Inner content container */
+      .section {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 80px 60px;
+      }
+
+      .section-title { font-size: 30px; }
+
+      /* Intro: ratings side */
+      .intro-desktop {
+        display: grid;
+        grid-template-columns: 1fr 260px;
+        gap: 60px;
+        align-items: start;
+      }
+
+      .rating-row {
+        grid-template-columns: 1fr;
+        margin-bottom: 0;
+        gap: 10px;
+      }
+
+      .rating { min-height: unset; }
+
+      .lead { font-size: 15px; }
+
+      /* Features: 3-col */
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      /* Gallery */
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+      }
+
+      .photo-slot.wide {
+        grid-column: span 3;
+        aspect-ratio: 3 / 1.3;
+      }
+
+      /* Reviews: 3-col */
+      .reviews .section { background: #fff; }
+
+      .review-list {
+        align-items: start;
+        gap: 20px;
+      }
+
+      .review-card {
+        flex: 0 0 31%;
+      }
+
+      /* Amenities: 2-col */
+      .amenity-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      /* Who: 2-col */
+      .scene-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      /* Access */
+      .access-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+
+      .map-frame {
+        height: 340px;
+        margin-bottom: 0;
+      }
+
+      /* Final CTA */
+      .final-cta {
+        padding: 120px 8%;
+      }
+
+      .final-cta h2 {
+        font-size: 48px;
+        max-width: 640px;
+      }
+
+      .final-cta p {
+        font-size: 15px;
+        max-width: 500px;
+      }
+
+      .cta-buttons {
+        grid-template-columns: auto auto;
+        width: fit-content;
+        gap: 14px;
+      }
+
+      .final-cta .button {
+        width: auto;
+        min-width: 220px;
+      }
+
+      /* Hide floating CTA on desktop */
+      .fixed-cta { display: none; }
+    }
+
+    /* small mobile */
+    @media (max-width: 360px) {
+      .section { padding: 56px 18px; }
+      .hero { padding: 0 18px 42px; }
+      .rating-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-banner">DEMO SITE — Base in Okinawa Onnason LP</div>
+
+  <div class="lp-wrapper">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-label">Base in Okinawa Onnason</div>
+        <h1>ただいま、<br>沖縄。</h1>
+        <p class="hero-copy">一棟まるごと、家族だけの時間を。<br>恩納村・希望ヶ丘に、<br>そんな場所があります。</p>
+        <a class="button" href="#booking">空室を確認する</a>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section" id="concept">
+      <div class="intro-desktop">
+        <div>
+          <div class="eyebrow">Concept</div>
+          <h2 class="section-title">旅先でも、家族らしく<wbr>いられる場所。</h2>
+          <div class="lead">
+            <p>ホテルでは、子どもの声が気になる。<br>荷物も、段取りも、気を遣うことが多い。</p>
+            <p>Baseは、そうじゃない。</p>
+            <p>3LDKの空間は、あなたの家族だけのもの。キッチンには調味料もそろっている。子どもたちはおもちゃに夢中になっている間に、コーヒー片手にソファでひといき。</p>
+            <p class="quiet">旅行にきたのに、なんか家にいるみたい。<br>——それが、最高の褒め言葉だと思っています。</p>
+          </div>
+        </div>
+        <div class="rating-row" aria-label="宿泊評価">
+          <div class="rating">
+            <span class="rating-source">Google Maps</span>
+            <span class="rating-score">★ 4.9</span>
+          </div>
+          <div class="rating">
+            <span class="rating-source">Rakuten Travel</span>
+            <span class="rating-score">★ 5.0</span>
+          </div>
+          <div class="rating">
+            <span class="rating-source">Booking.com</span>
+            <span class="rating-score">9.1 / 10</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" style="background: var(--section-bg); padding-bottom:72px; margin-bottom:56px">
+      <div class="eyebrow">Features</div>
+      <h2 class="section-title">のびのびできる理由、<wbr>3つ。</h2>
+      <div class="features">
+        <article class="feature-card">
+          <span class="feature-number">01</span>
+          <h3>一棟まるごと、家族だけの空間</h3>
+          <p>ロビーも隣室も関係ない。3LDKを家族で独占する開放感は、一棟貸しにしかないもの。子どもが走り回っても大丈夫。</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-number">02</span>
+          <h3>着替えを減らして来られる</h3>
+          <p>調味料・洗濯乾燥機・ウォーターサーバー・コーヒー・子ども用おもちゃ・ベビーチェア。細かいところまで揃えるのが、Baseのこだわり。</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-number">03</span>
+          <h3>徒歩10分、静かな海へ</h3>
+          <p>希望ヶ丘ビーチは観光客でにぎわう恩納の海とは違う、静かな穴場。夜は星が見えるほど暗く、空が近い。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" aria-label="ギャラリー">
+      <div class="gallery-grid">
+        <figure class="photo-slot wide">
+          <img src="photos/gallery-living-wide.jpg"
+               alt="海を望む明るいリビング" loading="lazy">
+          <figcaption class="photo-label">Living Space</figcaption>
+        </figure>
+        <figure class="photo-slot">
+          <img src="photos/gallery-kitchen.jpg"
+               alt="キッチン・ダイニング" loading="lazy">
+          <figcaption class="photo-label">Kitchen</figcaption>
+        </figure>
+        <figure class="photo-slot">
+          <img src="photos/gallery-bedroom.jpg"
+               alt="ベッドルーム" loading="lazy">
+          <figcaption class="photo-label">Bedroom</figcaption>
+        </figure>
+        <figure class="photo-slot">
+          <img src="photos/gallery-relax.jpg"
+               alt="家族の時間" loading="lazy">
+          <figcaption class="photo-label">Family Time</figcaption>
+        </figure>
+        <figure class="photo-slot">
+          <img src="photos/gallery-bbq.jpg"
+               alt="テラス・BBQ" loading="lazy">
+          <figcaption class="photo-label">BBQ Terrace</figcaption>
+        </figure>
+        <figure class="photo-slot">
+          <img src="photos/exterior.jpg"
+               alt="外観" loading="lazy">
+          <figcaption class="photo-label">Base in Okinawa Onnason</figcaption>
+        </figure>
+        <figure class="photo-slot">
+          <img src="photos/siblings-beach.jpg"
+               alt="希望ヶ丘ビーチ" loading="lazy">
+          <figcaption class="photo-label">Beach Life</figcaption>
+        </figure>
+        <figure class="photo-slot wide">
+          <img src="photos/hero-kibogaoka.jpg"
+               alt="希望ヶ丘ビーチ・恩納村の海" loading="lazy">
+          <figcaption class="photo-label">Kibogaoka Beach — 10 min walk</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section reviews" id="reviews">
+      <div class="eyebrow">Reviews</div>
+      <h2 class="section-title">選ばれている理由は、<wbr>口コミに出ています。</h2>
+      <div class="review-list">
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>「建物が新しく、どこもかしこも非常に清潔です。生活に必要なものが全て揃っていて、自分の家のようにリラックスできました。子供向け設備が充実しており、小さな子供連れには最高の宿です。また沖縄に来る際は必ず利用したいです。」</blockquote>
+          <cite>S.T.</cite>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>「とにかく清潔で感動しました。ホテルだと周りに気を使いますが、一棟貸しなのでのびのび過ごせました。おもちゃが沢山あって、子供がずっと遊んでいてくれたので、親もゆっくりできました。」</blockquote>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>「2度目の利用です。前回同様、清掃が完璧でした。キッチンに油や塩コショウがあるのが地味に嬉しいです。徒歩圏内にビーチがあり、オーナーの方のレスポンスが非常に速く、安心して滞在できました。」</blockquote>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>「友人グループで宿泊しましたが、3LDKで広々していて快適でした。テラスでのBBQも機材がしっかりしていて楽しめました。近くのビーチも人が少なく穴場でした。」</blockquote>
+          <cite>H.K.</cite>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>「どこもかしこも清潔感があり、綺麗で嬉しかったです。アメニティが充実しており、子供グッズなどもたくさん揃えてあり、お子様連れでも満足できそうなお部屋でした。」</blockquote>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>「Everything was perfect. The house was spotless and had everything we needed, from a well-equipped kitchen to laundry supplies. The garden is lovely for children. Highly recommend for families.」</blockquote>
+          <cite>J.</cite>
+        </article>
+      </div>
+    </section>
+
+    <!-- AMENITIES -->
+    <section class="section">
+      <div class="eyebrow">Amenities</div>
+      <h2 class="section-title">暮らすように過ごすための設備。</h2>
+      <div class="amenity-grid">
+        <article class="amenity-card">
+          <div>
+            <h3>キッチン・食</h3>
+            <p>キッチン用品フルセット / 調味料（油・塩・コショウ他）/ コーヒー・カップ麺 / ウォーターサーバー</p>
+          </div>
+        </article>
+        <article class="amenity-card">
+          <div>
+            <h3>洗濯・生活</h3>
+            <p>洗濯乾燥機（洗剤付き）/ タオル・アメニティ一式</p>
+          </div>
+        </article>
+        <article class="amenity-card">
+          <div>
+            <h3>エンタメ・子ども</h3>
+            <p>子ども用おもちゃ多数 / ベビーチェア / Netflix・Amazon Prime（TV）</p>
+          </div>
+        </article>
+        <article class="amenity-card">
+          <div>
+            <h3>アウトドア</h3>
+            <p>BBQ機材 / テラス</p>
+          </div>
+        </article>
+        <article class="amenity-card">
+          <div>
+            <h3>駐車場</h3>
+            <p>無料駐車場 2台分（3台目以降は要相談）</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHO -->
+    <section class="section who">
+      <div class="eyebrow">For You</div>
+      <h2 class="section-title">こんな時間を、<wbr>想像してみてください。</h2>
+      <div class="scene-list">
+        <article class="scene-card">
+          <div class="scene-type">子連れファミリー</div>
+          <p>おもちゃに夢中な子どもを横目に、ソファでコーヒーを飲む朝。「なんか、うちに帰ってきたみたい」と笑い合う。</p>
+        </article>
+        <article class="scene-card">
+          <div class="scene-type">ホテルに疲れた方</div>
+          <p>隣室を気にせず、子どもが走り回っても大丈夫。翌朝は誰のペースにも合わせず、自分たちだけの朝ごはん。</p>
+        </article>
+        <article class="scene-card">
+          <div class="scene-type">静かな海がいい方</div>
+          <p>夕方、希望ヶ丘ビーチを素足で歩く。観光客でにぎわう恩納とは違う、静かな沖縄の時間がそこにある。</p>
+        </article>
+        <article class="scene-card">
+          <div class="scene-type">グループ・大人数</div>
+          <p>夜はBBQ、翌朝は全員でキッチンに立って朝ごはんを作る。旅行でも、日常みたいな温度感が好きな人に。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ACCESS -->
+    <section class="section access">
+      <div class="eyebrow">Access</div>
+      <h2 class="section-title">那覇空港から車で約70分、<wbr>恩納村名嘉真へ。</h2>
+      <div class="access-inner">
+        <div class="access-text">
+          <p><strong>〒904-0401 沖縄県国頭郡恩納村名嘉真</strong></p>
+          <p>那覇空港から車で約70分（沖縄自動車道利用）</p>
+          <p>希望ヶ丘ビーチまで徒歩約10分</p>
+          <p>ローソン（車2分）／スーパー（車20分）</p>
+        </div>
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4848.325331837614!2d127.92554439999999!3d26.5200056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5012f8fdb59db%3A0x8a64d0af0750e816!2sBase%20in%20Onnason%2C%20Okinawa(No.4~No.6)!5e1!3m2!1sja!2sjp!4v1780368103466!5m2!1sja!2sjp"
+            width="100%" height="100%" loading="lazy"
+            title="Base in Okinawa Onnason 周辺地図">
+          </iframe>
+        </div>
+        <a class="map-link" href="https://maps.app.goo.gl/iopmZDFv7htVqvNu9" target="_blank" rel="noopener">Googleマップで開く →</a>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="booking">
+      <h2>旅先に、<br>もうひとつの家。</h2>
+      <p>空室カレンダー・料金・ご予約は<br>各予約サイトからご確認いただけます。</p>
+      <div class="cta-buttons">
+        <a class="button primary-cta" href="https://travel.rakuten.co.jp/" target="_blank" rel="noopener">楽天トラベルで見る</a>
+        <a class="button" href="https://www.booking.com/" target="_blank" rel="noopener">Booking.comで見る</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <strong>Base in Okinawa Onnason</strong>
+      沖縄県国頭郡恩納村名嘉真<br>一棟貸し切りヴィラ / 3LDK
+    </footer>
+
+  </div><!-- /.lp-wrapper -->
+
+  <!-- Floating CTA (mobile only) -->
+  <div class="fixed-cta">
+    <a class="button" href="#booking">空室を確認する</a>
+  </div>
+
+</body>
+</html>
